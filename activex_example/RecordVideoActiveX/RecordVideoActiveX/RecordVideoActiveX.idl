@@ -1,0 +1,52 @@
+// RecordVideoActiveX.idl : ActiveX 控件项目的类型库源。
+
+// 此文件将由 MIDL 编译器工具处理以
+// 产生类型库(RecordVideoActiveX.tlb)，该类型库将成为
+// RecordVideoActiveX.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(2114D76E-1272-4289-B200-DAE0712C4EE9), version(1.0),
+  control ]
+library RecordVideoActiveXLib
+{
+	importlib(STDOLE_TLB);
+
+	//  CRecordVideoActiveXCtrl 的主调度接口
+	[ 
+		uuid(CC4D8743-98AF-459D-A963-7ED1997ABF3D)	
+	]
+	dispinterface _DRecordVideoActiveX
+	{
+		properties:
+		methods:
+
+			[id(DISPID_ABOUTBOX)] void AboutBox();
+			[id(1)] void recordVideo(void);
+	};
+
+	//  CRecordVideoActiveXCtrl 的事件调度接口
+
+	[ 
+		uuid(981F13F5-F0D8-4890-929F-075E2F6458A4)	
+	]
+	dispinterface _DRecordVideoActiveXEvents
+	{
+		properties:
+			//  事件接口没有任何属性
+
+		methods:
+	};
+
+	//  CRecordVideoActiveXCtrl 的类信息
+	[
+		uuid(11E94B42-68FD-4960-A306-74C6A357EF65)
+	]
+	coclass RecordVideoActiveX
+	{
+		[default] dispinterface _DRecordVideoActiveX;
+		[default, source] dispinterface _DRecordVideoActiveXEvents;
+	};
+
+};
